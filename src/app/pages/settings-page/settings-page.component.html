@@ -1,0 +1,72 @@
+<section class="page-content-container">
+  <h2 class="big-bottom-margin top-margin styled-font">Manage spending categories</h2>
+
+  <div class="big-box">
+    <div class="list-container">
+      <div class="list-container__list-item">
+        <div class="row expanded">
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+            Category name
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+            Category color
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-lg-offset-1 ">
+            Action
+          </div>
+        </div>
+      </div>
+
+      <!-- End of row (header)-->
+      <div *ngFor="let category of categories">
+        <div class="list-container__list-item" [style.border-color]="category.categoryColor">
+          <div class="row expanded">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+              {{category.categoryName}}
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+              {{category.categoryColor}}
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-lg-offset-1 ">
+              <div class="btns inline-block min-width">Edit </div>
+              <div class="add-whitespace inline-block"></div>
+              <div class="btns inline-block min-width">Delete </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <form autocomplete="off">
+        <div class="list-container__list-item">
+          <div class="row expanded">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <label for="new-category-name">Category name
+                <input type="text" id="new-category-name" name="new-category-name" class="form-control">
+              </label>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <label for="new-category-color-picker">Category color
+                <input type="color" name="new-category-color-picker" id="new-category-color-picker" class="form-control">
+              </label>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-lg-offset-1 ">
+              <div id="add-new-category-button" class="btns inline-block min-width">+ Add </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <!-- End of row -->
+  <!-- End of categories -->
+
+  <add-settings-form></add-settings-form>
+</section>

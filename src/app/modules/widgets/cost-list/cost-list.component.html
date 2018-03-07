@@ -1,0 +1,19 @@
+<div *ngFor=" let costItem of costItems ">
+  <div class="list-container__list-item" [style.border-color]="costItem.itemCategory.categoryColor ">
+    <div class="row expanded ">
+      <div class="col-sm-2 col-md-2">
+
+        <a routerLink="/costItems/{{costItem._id}}">{{costItem.itemName}} </a>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <p> -
+          <span class="balance-indicator negative">{{(costItem.unitPrice * costItem.itemAmount) | number: '1.2-2'}} </span>$</p>
+      </div>
+    </div>
+    <div class="row expanded ">
+      <div class="col-sm-12 col-md-12">
+        <p>{{costItem.itemCategory.categoryName}} </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.page-content-container {
+    margin: 30px;
+    margin-top: 0px;
+    height: 100%;
+    font-size: $small-font-size;
+}
+
+.backgrounded-body {
+    background-color: rgb(223, 219, 219);
+}
+
+.form-container{
+    margin: 0 auto; 
+    margin-bottom: 1.5em;
+    background-color: white;
+    max-width: 600px;
+    padding: 0 10px;
+    padding-bottom: 10px;
+
+    @include element('form-itself') {
+        padding: 0 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.big-box {
+    width: 75%;
+    margin-bottom: 20px;
+
+    .list-container {
+        margin-bottom: 50px;
+        background-color: white;
+        padding: 3px;
+        background-color: rgb(223, 219, 219);
+        
+        @include element('list-item') {
+            max-width: 100%;
+            background-color: #fff;
+            border-left: 10px solid rgb(51, 233, 51);
+            padding: 1.2em 1.2em;
+            padding-left: 1.5em;
+            margin-bottom: 1.5em;
+            margin-left: $containerLeftMargin;
+            
+            a {
+                font-weight: bold;
+                color: #0099FF;
+            }
+        }
+    }
+}

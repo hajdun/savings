@@ -1,0 +1,40 @@
+<div class="form-container">
+  <div class="form-container__form-itself">
+    <form autocomplete="off" class="form">
+      <fieldset>
+        <legend>Submit income item</legend>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="income-date">Date of income </label>
+          <input class="form__input form-control optional-form-element" type="date" id="income-date" name="income-date" [value]="formattedDate | date:'yyyy-MM-dd'"
+            #incomeDate>
+        </div>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="income-regularness">Regularness </label>
+          <mat-slide-toggle name="income-regularness" id="income-regularness"></mat-slide-toggle>
+        </div>
+
+
+        <div class="small-bottom-margin block-style required-form-element">
+          <label class="form__label" for="inc-name">Income name
+          </label>
+          <input class="form__input form-control" type="text" id="inc-name" name="inc-name" />
+        </div>
+
+        <div class="small-bottom-margin block-style required-form-element">
+          <label class="form__label" for="inc-quantity">Income amount
+          </label>
+          <input class="form__input form-control" type="number" id="inc-quantity" name="inc-quantity" value="100" /> $
+        </div>
+
+
+        <div>
+          <input class="form__submit" type="submit" id="submit-inc" value="Submit income item" />
+        </div>
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "short_name": "Savings",
+    "name": "Savings",
+    "icons": [
+        {
+            "src": "/assets/icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "start_url": "index.html?launcher=true"
+}

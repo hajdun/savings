@@ -1,0 +1,28 @@
+<div *ngFor="let saving of savings">
+  <div class="list-container__list-item">
+    <div class="row expanded list-font">
+      <div class="col-sm-2 col-md-2">
+        <span>
+          {{saving.savingName}}
+        </span>
+      </div>
+      <div class="col-sm-2 col-md-2 small-bottom-margin">
+        +
+        <span class="savings-indicator positive ">{{saving.savingCollected}} {{currencies[0].currencySymbol}}</span> collected
+      </div>
+
+      <div class="col-sm-12 col-md-12">
+        <p>
+          <span class="savings-indicator negative">- {{saving.savingFullPlannedAmount - saving.savingCollected}} {{currencies[0].currencySymbol}}</span>
+          of
+          <span class="savings-indicator neutral">{{saving.savingFullPlannedAmount}} {{currencies[0].currencySymbol}}</span>
+          to go
+        </p>
+      </div>
+
+      <div class="small-div">
+        <mat-progress-bar mode="determinate" class="savings-progress-bar" [value]="countPercent(saving.savingFullPlannedAmount, saving.savingCollected)"></mat-progress-bar>
+      </div>
+    </div>
+  </div>
+</div>

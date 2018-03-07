@@ -1,0 +1,18 @@
+<div *ngFor="let income of incomes">
+  <div class="list-container__list-item">
+    <div class="row expanded">
+      <div class="col-sm-2 col-md-2">
+        <p>
+          {{income.incomeName}}
+        </p>
+
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <p>
+          +
+          <span class="balance-indicator positive">{{income.incomeAmount}}</span> $
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

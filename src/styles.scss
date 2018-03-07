@@ -1,0 +1,95 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// settings
+@import './assets/styles/variables';
+@import './assets/styles/fonts';
+
+// tools
+@import './assets/styles/mixins';
+
+//elements
+@import './assets/styles/menu';
+@import './assets/styles/forms';
+
+//objects (grid, wrappers, containers)
+@import './assets/styles/wrappers';
+
+.styled-font {
+    font-family: 'Lobster';
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.add-whitespace {
+    background: white;
+    width: 5px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block-style {
+    display: block;
+}
+
+.min-width {
+    min-width: 50px;
+}
+.small-left-margin {
+    margin-left:20px;
+}
+
+.left-margin {
+    margin-left:40px;
+}
+
+.bigger-left-margin {
+    margin-left:30px;
+}
+
+.right-margin {
+    margin-right: 10px;
+}
+
+.big-right-margin{
+    margin-right: 150px;
+}
+
+.small-bottom-margin {
+    margin-bottom: 2em;
+}
+
+.big-bottom-margin {
+    margin-bottom:50px;
+}
+
+.top-margin {
+    margin-top: 20px;
+}
+
+.balance-indicator{
+    font-weight: bold;
+    .positive {
+        color: green;
+    }
+    .negative {
+        color: red;
+    }
+    .neutral {
+        color: orange;
+    }
+}
+
+.block{
+    display: block;
+}
+
+.columns{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+

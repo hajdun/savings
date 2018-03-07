@@ -1,0 +1,66 @@
+<!--Form-->
+<div class="form-container">
+  <div class="form-container__form-itself">
+    <form autocomplete="off" class="form" [formGroup]="costItemFrm" (ngSubmit)="addcostItem(costItem, costItemFrm.value)" *ngIf="costItemFrm">
+      <fieldset>
+        <legend>Submit cost item</legend>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="item-bought-date">Date of shopping </label>
+          <input class="form__input form-control optional-form-element" type="date" id="item-bought-date" name="item-bought-date" [formControl]="costItemFrm.controls['itemBoughtDate']"
+            formControlName="itemBoughtDate" [value]="formattedDate | date:'yyyy-MM-dd'" #itemBoughtDate>
+        </div>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="item-bought-regularness">Regularness </label>
+          <mat-slide-toggle name="item-bought-regularness" id="item-bought-regularness" [formControl]="costItemFrm.controls['itemBoughtRegularness']"
+            formControlName="itemBoughtRegularness" #itemBoughtRegularness></mat-slide-toggle>
+        </div>
+
+        <div class="small-bottom-margin block-style required-form-element">
+          <label class="form__label" for="item-name">Item name </label>
+          <input class="form__input form-control" type="text" id="item-name" name="item-name" [formControl]="costItemFrm.controls['itemName']"
+            formControlName="itemName">
+          <div *ngIf="!costItemFrm.controls['itemName'].valid  && costItemFrm.controls['itemName'].touched">
+            <div class="alert">
+              <div *ngIf="costItemFrm.controls['itemName'].errors.required">This field is required!</div>
+              <div *ngIf="costItemFrm.controls['itemName'].errors.minlength">Minimum length is 3 characters!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="item-category">Item category </label>
+          <select class="form__input optional-form-element" id="item-category" name="item-category" [formControl]="costItemFrm.controls['itemCategory']"
+            formControlName="itemCategory" #itemCategory>
+            <option *ngFor="let category of categories" [ngValue]="category">
+              {{category.categoryName}}
+            </option>
+          </select>
+        </div>
+
+        <div class="small-bottom-margin block-style required-form-element">
+          <label class="form__label" for="unit-price">Unit price </label>
+          <input class="form__input form-control" type="number" id="unit-price" name="unit-price" [(value)]="unitPrice" [formControl]="costItemFrm.controls['unitPrice']"
+            formControlName="unitPrice" [(ngModel)]="unitPrice">
+          <div class="alert" *ngIf="!costItemFrm.controls['unitPrice'].valid && costItemFrm.controls['unitPrice'].touched">This field is required!</div>
+        </div>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="item-amount">Amount </label>
+          <input class="form__input form-control optional-form-element" autocomplete="nope" type="number" id="item-amount" name="item-amount"
+            [(value)]="itemAmount" [formControl]="costItemFrm.controls['itemAmount']" formControlName="itemAmount" [(ngModel)]="itemAmount">
+          <div class="alert" *ngIf="!costItemFrm.controls['itemAmount'].valid && costItemFrm.controls['itemAmount'].touched">This field is required!</div>
+        </div>
+
+        <div class="small-bottom-margin block-style">
+          <label class="form__label optional-form-element" for="total-spent">Spent ( price * amount) = </label>
+          <input class="form__input form-control optional-form-element" type="number" id="total-spent" name="total-spent" value="{{unitPrice*itemAmount}}"
+            disabled>$
+        </div>
+
+        <input class="form__submit" type="submit" id="submit-costs" value="Post costItem" [disabled]="!costItemFrm.valid">
+      </fieldset>
+    </form>
+  </div>
+</div>

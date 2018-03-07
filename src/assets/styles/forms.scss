@@ -1,0 +1,134 @@
+.btns {
+    font-size: 10px;
+    background: #c2d9e8;
+    color: #56758b;
+    padding: 7px;
+    min-width: 50px;
+    margin: auto;
+}
+
+.form {
+
+    .optional-border {
+        border: 2px $optionalFieldBorderColor solid;
+        border-radius: $formBorderRadius;
+        max-width: $formFieldMaxWidth;
+        width: $formFieldMaxWidth;
+    }
+
+    legend {
+        visibility: hidden;
+    }
+    
+    fieldset {
+        border: none;
+    }
+
+    @include element('input') {
+        max-width: $formFieldMaxWidth;
+        width: $formFieldMaxWidth;
+        height: $formFieldCurrentHeight;
+        padding: $formFieldCurrentPadding;
+
+        -webkit-box-sizing: border-box;
+        /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;
+        /* Firefox, other Gecko */
+        box-sizing: border-box;
+        /* Opera/IE 8+ */
+
+    }
+
+    @include element('label') {
+        max-width: $formFieldMaxWidth;
+        width: $formFieldMinWidth;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        display: block;
+        padding: 3px;
+    }
+
+    @include element('submit') {
+        max-width: $formFieldMaxWidth;
+        width: $formFieldMaxWidth;
+        height: $formFieldCurrentHeight;
+        padding: $formFieldCurrentPadding;
+        background-color: #64f38c;
+        text-align: center;
+        font-size: 18px;
+        margin-top:10px;
+    }
+
+    .field--optional {
+        color: $optionalFieldTextColor;
+        border-color: $optionalFieldBorderColor;
+    }
+
+    input[type=text]:focus,
+    textarea:focus {
+        background: #fff;
+        border: 1px solid #555;
+        box-shadow: 0 0 3px #aaa;
+    }
+
+    input[type=text],
+    textarea {
+        /* add this to the already existing style */
+        -moz-transition: padding .25s;
+        -webkit-transition: padding .25s;
+        -o-transition: padding .25s;
+        transition: padding .25s;
+    }
+
+    input[type=text],
+    textarea {
+        padding-right: 30px;
+    }
+
+    .optional-form-element,
+    .optional-form-element > input[type=number],
+    .optional-form-element > input[type=date] {
+        color: $optionalFieldTextColor;
+        border-color: $optionalFieldBorderColor;
+    }
+
+    .required-form-element {
+       color: black;
+       border-bottom-width: 30px;
+    }
+
+   .alert {
+       margin-top: 5px;      
+       color: red;
+       border-color: red;
+       background-color:rgb(253, 208, 215);
+       max-width: $formFieldMaxWidth;
+       width: $formFieldMaxWidth;
+       font-weight: bold;
+    }
+}
+
+
+@media (max-width: 720px) {
+    .form {
+        @include element('input') {
+            max-width: $formFieldMinWidth;
+            width: $formFieldMinWidth;
+        }
+
+        @include element('submit') {
+            max-width: $formFieldMinWidth;
+            width: $formFieldMinWidth;
+        }
+
+        .optional-border {
+            max-width: $formFieldMinWidth;
+            width: $formFieldMinWidth;
+        }
+        
+        .alert  {
+            max-width: $formFieldMinWidth;
+            width: $formFieldMinWidth;
+        }
+    }
+}

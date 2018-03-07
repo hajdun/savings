@@ -1,0 +1,63 @@
+button.navbar-toggler {
+    background-color: white;
+    z-index: 1;
+}
+
+nav {
+    font-size: $menu-font-size;
+    a:hover {
+        background-color: $menu-hover-background-color;
+        color: $menu-hover-text-color;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        color: $ul-li-a-background-color;
+        text-decoration: none;
+        padding: .5rem 1rem;
+    }
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: $ul-li-a-hover-background-color;
+        border: 2px green solid;
+    }
+    .active-link {
+        background-color: $menu-active-background-color;
+        color: $menu-active-text-color;
+    }
+
+}
+
+.nav li {
+	display: inline;
+    color: white;
+}
+
+@media (max-width: 720px) {
+      li {
+        display: block;
+        width: 100%;
+    }
+}
+
+.add-btn {
+    background-color: #d2d2d2;
+    padding: 7px 12px;
+    margin: 20px 0 20px 20px;
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.navbar-line {
+    background-color: black;
+    margin-bottom: 20px;
+}
+

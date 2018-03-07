@@ -1,0 +1,39 @@
+<h2 class="big-bottom-margin top-margin styled-font">Local settings</h2>
+<div class="form-container small-left-margin">
+  <div class="form-container__form-itself">
+    <form autocomplete="off" class="form">
+
+      <div class="small-bottom-margin block-style ">
+        <label class="form__label optional-form-element" for="language ">Language </label>
+        <select class="form__input form-control optional-form-element" id="language " name="language ">
+          <option *ngFor="let language of languages " [ngValue]="language ">
+            {{language}}
+          </option>
+        </select>
+      </div>
+
+      <div class="small-bottom-margin block-style ">
+        <label class="form__label optional-form-element " for="currency ">Currency </label>
+        <select class="form__input form-control optional-form-element " id="currency " name="currency ">
+          <option *ngFor="let currency of currencies " class="bigger-left-margin " [ngValue]="currency ">
+            {{currency.currencySymbol}} - {{currency.currencyName}}
+          </option>
+        </select>
+      </div>
+
+      <div class="small-bottom-margin block-style ">
+        <label class="form__label optional-form-element" for="hide-optional-fields ">Hide optional fields</label>
+        <mat-slide-toggle name="hide-optional-fields "></mat-slide-toggle>
+      </div>
+
+      <div class="small-bottom-margin block-style ">
+        <label class="form__label optional-form-element " for="excel ">Upload Excel file </label>
+        <input type="file" name="excel" id="excel" class="form__input form-control optional-form-element " accept=".xls, .xlsx, .csv">
+      </div>
+
+      <div>
+        <input class="form__submit " type="submit " id="submit-settings" value="Save changes " />
+      </div>
+    </form>
+  </div>
+</div>
